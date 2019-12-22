@@ -27,6 +27,10 @@ response.code_message = {
         ["code"] = 404,
         ["message"] = "Not Found"
     },
+    ["NOT_FOUND_CLIENT_IP"] = {
+        ["code"] = 404001,
+        ["message"] = "Not Found Client IP"
+    },
     ["METHOD_NOT_ALLOWED"] = {
         ["code"] = 405,
         ["message"] = "Method Not Allowed"
