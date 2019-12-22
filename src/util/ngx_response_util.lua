@@ -3,7 +3,7 @@
 --- Created by kute.
 --- DateTime: 2019/12/22 10:16
 ---
-local json = require("cjson")
+local json_util = require("util.json_util")
 local response = {}
 
 response.code_message = {
@@ -141,7 +141,7 @@ function response:exit(code_message)
     if code_message ~= nil then
         self.res = code_message
     end
-    ngx.say(json.encode(self.res))
+    ngx.say(json_util.encode(self.res))
     ngx.exit(ngx.HTTP_OK)
 end
 
