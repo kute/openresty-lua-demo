@@ -44,7 +44,7 @@ end
 local ip = ip_util.get_client_ip()
 ngx.log(ngx.ERR, "access url=" .. url .. " by ip=" .. ip)
 
-if not ip then
+if not ip or "unknown" == ip then
     ngx.log(ngx.ERR, "cannot get client ip for url=" .. url)
     response:exit(response.code_message["NOT_FOUND_CLIENT_IP"])
 elseif is_whitelist(ip) then
