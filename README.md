@@ -4,6 +4,9 @@
 #
 - https://leafo.net/lapis/reference.html
 - https://github.com/Tinywan/lua-nginx-redis
+- https://github.com/openresty/lua-resty-redis
+- https://github.com/openresty/lua-nginx-module
+- https://github.com/anjia0532/lua-resty-redis-util
 - https://luarocks.org/
 - https://github.com/steve0511/resty-redis-cluster
 - https://moonbingbing.gitbooks.io/openresty-best-practices/content/index.html
@@ -98,3 +101,7 @@ lapis server dev LAPIS_OPENRESTY=/opt/openresty  // 启动
 lapis term dev LAPIS_OPENRESTY=/opt/openresty // 停止服务
 lapis build dev LAPIS_OPENRESTY=/opt/openresty  // 重新加载配置文件
 ```
+
+http://light.kute.com:8080/light
+http://light.kute.com:8080/light/api/test/name/count
+http://light.kute.com:8080/api/light/message/unreadcount

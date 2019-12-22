@@ -6,12 +6,34 @@
 local config = require("lapis.config")
 
 -- 配置开发测试环境
-config({"dev", "test"}, {
+config({ "dev", "test" }, {
     port = 8080,
     num_workers = 4,
     code_cache = "on",
     worker_connection = 65535,
-    measure_performance = true
+    measure_performance = true,
+    -- redis M/S config
+    redis_config = {
+        host = "10.39.64.193",
+        port = 6379,
+        db_index = 0,
+        password = "kuteredis",
+        timeout = 1000, -- ms
+        keepalive = 60000,
+        pool_size = 100
+    },
+    ip_blacklist_config = {
+        -- set
+        whitelist = {
+            whitelist_cache_key = "whitelist_total",
+        },
+        blacklist = {
+            blacklist_count_prefix = "blacklist_count_",
+            blacklist_prefix = "blacklist_",
+            expired = 60
+        },
+        limit = 10
+    }
 })
 
 -- 配置生产环境

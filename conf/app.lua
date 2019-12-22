@@ -36,6 +36,7 @@ function app:default_route()
     -- 调用 默认路由 的默认实现，见 demo
     return lapis.Application.default_route(self)
 end
+
 -- 重写 404
 function app:handle_404()
     return { status = 404, layout = false, "Not Found!" }
@@ -50,7 +51,5 @@ function app:handle_error(err, trace)
         return lapis.Application.handle_error(self, err, trace)
     end
 end
-
-
 
 return app
